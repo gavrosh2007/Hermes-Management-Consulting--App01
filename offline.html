@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermes MC - Нет соединения</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #f5ede4 0%, #e8ddd2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .offline-container {
+            text-align: center;
+            max-width: 500px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 48px;
+            padding: 3rem 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(193,123,90,0.3);
+        }
+        .offline-icon { font-size: 5rem; margin-bottom: 1rem; }
+        h1 { color: #c17b5a; font-size: 2rem; margin-bottom: 1rem; }
+        p { color: #5f4e47; font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.5; }
+        .retry-btn {
+            background: #c17b5a;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .retry-btn:hover { background: #b06a4a; }
+        .contacts { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(193,123,90,0.2); }
+        .contacts a { color: #c17b5a; text-decoration: none; display: inline-block; margin: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📡</div>
+        <h1>Нет соединения</h1>
+        <p>Проверьте подключение к интернету.<br>Как только связь восстановится, приложение продолжит работу.</p>
+        <button class="retry-btn" onclick="location.reload()">⟳ Попробовать снова</button>
+        <div class="contacts">
+            <a href="tel:+35799453575">📞 +357 99 453575</a>
+            <a href="mailto:gavrosh2007@gmail.com">✉️ gavrosh2007@gmail.com</a>
+        </div>
+    </div>
+    <script>
+        setInterval(() => { if (navigator.onLine) location.reload(); }, 5000);
+    </script>
+</body>
+</html>

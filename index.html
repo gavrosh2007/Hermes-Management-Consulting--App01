@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800&display=swap&subset=greek" rel="stylesheet">
     
     <!-- PWA -->
-    <link rel="manifest" href="/Hermes-Management-and-Consulting-App/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Hermes MC">
@@ -745,7 +745,7 @@
         <!-- Блок PWA кнопки (инструкция с поддержкой языков) -->
         <div class="install-area">
             <div class="install-tooltip">
-                <button id="pwa-install-icon" class="pwa-icon-btn" onclick="showPWAInstructions()">
+                <button id="pwa-install-icon" class="pwa-icon-btn">
                     <img src="icon-192x192.png" alt="Установить приложение" width="96" height="96"
                          onerror="this.style.display='none'; this.parentNode.querySelector('.fallback-text').style.display='inline-block';">
                     <span class="fallback-text" style="display:none;">📱</span>
@@ -1372,15 +1372,14 @@
         })();
     </script>
 
-    <!-- PWA service worker регистрация с принудительным перехватом -->
+    <!-- PWA service worker регистрация -->
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/Hermes-Management-and-Consulting-App/sw.js')
+            navigator.serviceWorker.register('sw.js')
                 .then(() => console.log('SW registered'))
                 .catch(err => console.log('SW error:', err));
         }
         
-        // Принудительная установка через меню Chrome
         let deferredPrompt;
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
@@ -1390,10 +1389,13 @@
         });
         
         document.getElementById('pwa-install-icon')?.addEventListener('click', async () => {
-            if (!deferredPrompt) return;
-            deferredPrompt.prompt();
-            await deferredPrompt.userChoice;
-            deferredPrompt = null;
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const result = await deferredPrompt.userChoice;
+                deferredPrompt = null;
+            } else {
+                showPWAInstructions();
+            }
         });
     </script>
 </body>
