@@ -6,7 +6,36 @@ const PRECACHE_URLS = [
   '/index.html',
   '/offline.html',
   '/H-wallpaper.jpeg',
-  '/dervish.mp4'
+  '/dervish.mp4',
+  // ДОКУМЕНТЫ (ВСЕ БЛОКИ ИЗ index.html)
+  '/doc-offshore1-ru',
+  '/doc-offshore1-en',
+  '/doc-offshore1-el',
+  '/doc-offshore1-ua',
+  '/doc-offshore2-ru',
+  '/doc-offshore2-en',
+  '/doc-offshore2-el',
+  '/doc-offshore2-ua',
+  '/doc-offshore3-ru',
+  '/doc-offshore3-en',
+  '/doc-offshore3-el',
+  '/doc-offshore3-ua',
+  '/doc-tax1-ru',
+  '/doc-tax1-en',
+  '/doc-tax1-el',
+  '/doc-tax1-ua',
+  '/doc-tax2-ru',
+  '/doc-tax2-en',
+  '/doc-tax2-el',
+  '/doc-tax2-ua',
+  '/doc-arch1-ru',
+  '/doc-arch1-en',
+  '/doc-arch1-el',
+  '/doc-arch1-ua',
+  '/doc-arch2-ru',
+  '/doc-arch2-en',
+  '/doc-arch2-el',
+  '/doc-arch2-ua'
 ];
 
 self.addEventListener('install', function(event) {
@@ -14,7 +43,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
-        console.log('[Service Worker] Кеширование основных ресурсов');
+        console.log('[Service Worker] Кеширование основных ресурсов и документов');
         return cache.addAll(PRECACHE_URLS);
       })
       .then(function() {
