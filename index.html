@@ -1375,8 +1375,8 @@
     <!-- PWA service worker регистрация -->
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(() => console.log('SW registered'))
+           navigator.serviceWorker.register('sw.js?v=2')
+               .then(() => console.log('SW registered'))
                 .catch(err => console.log('SW error:', err));
         }
         
