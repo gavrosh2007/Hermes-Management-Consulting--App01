@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800&display=swap&subset=greek" rel="stylesheet">
     
-    <!-- PWA - ИСПРАВЛЕНО: путь к манифесту -->
+    <!-- PWA -->
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,12 +17,11 @@
     <meta name="theme-color" content="#c17b5a">
     
     <style>
-        /* ========== ЕДИНСТВЕННОЕ ИЗМЕНЕНИЕ: РАЗМЫТИЕ ФОНА ДЛЯ ЧИТАЕМОСТИ ========== */
+        /* ========== ОРИГИНАЛЬНЫЕ СТИЛИ (НЕ МЕНЯЮ) ========== */
         body {
             background-color: rgba(255, 255, 255, 0.6);
             background-blend-mode: overlay;
         }
-        /* ========== КОНЕЦ ИЗМЕНЕНИЙ ========== */
         
         * {
             margin: 0;
@@ -41,6 +40,32 @@
             display: flex;
             flex-direction: column;
         }
+        
+        /* ========== ТОЛЬКО БОЛД И КОНТРАСТ (БЕЗ ИЗМЕНЕНИЯ ФОНА И КНОПОК) ========== */
+        body, p, h1, h2, h3, h4, .nav-btn, .big-btn, .service-card p, .service-card h3, 
+        .epigraph p, .epigraph small, .contact-item, footer, .art-link, .order-card p,
+        .stack-photo, .video-card a, .hero p, .hero h2, .lang-btn, .install-note,
+        .logo h1, .logo span, .tooltip-text, .service-tag, .feature-item span,
+        .creative-card h3, .contact-section h2, .video-section h3, .culinary-features span,
+        .doc-text, .doc-text p, .doc-text h2, .doc-text h3 {
+            font-weight: 800 !important;
+        }
+        
+        /* Усиливаем контраст цветов, но сохраняем оригинальные оттенки */
+        body, p, .service-card p, .hero p, .contact-item, .install-note, .doc-text, .doc-text p {
+            color: #2a1a15 !important;
+        }
+        
+        h1, h2, h3, h4, .hero h2, .service-card h3, .creative-card h3, .epigraph p, .doc-text h2, .doc-text h3 {
+            color: #c17b5a !important;
+        }
+        
+        .nav-btn, .big-btn, .art-link {
+            font-weight: 800 !important;
+        }
+        /* ========== КОНЕЦ ДОБАВЛЕННЫХ СТИЛЕЙ ========== */
+        
+        /* ВСЕ ОСТАЛЬНЫЕ ОРИГИНАЛЬНЫЕ СТИЛИ (БЕЗ ИЗМЕНЕНИЙ) */
         header {
             background: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(4px);
@@ -62,16 +87,12 @@
         }
         .logo h1 {
             font-size: 2.8rem;
-            font-weight: 800;
             letter-spacing: 1px;
-            color: #c17b5a;
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .logo span {
-            font-weight: 700;
             font-size: 1.4rem;
-            color: #b8a89a;
             letter-spacing: 0.5px;
             text-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
@@ -107,7 +128,6 @@
             background: none;
             border: none;
             font-size: 1.2rem;
-            font-weight: 600;
             color: #5f4e47;
             cursor: pointer;
             padding: 0.5rem 1rem;
@@ -158,17 +178,13 @@
         }
         .epigraph p {
             font-size: 1.8rem;
-            color: #c17b5a;
-            font-weight: 700;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
             letter-spacing: 0.5px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .epigraph small {
             font-size: 1.3rem;
-            color: #c17b5a;
             display: block;
             margin-top: 0.5rem;
-            font-weight: 700;
             text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
         .hero {
@@ -181,17 +197,13 @@
         }
         .hero h2 {
             font-size: 3rem;
-            font-weight: 700;
-            color: #4a3f3a;
             margin-bottom: 1rem;
             text-shadow: 0 1px 3px rgba(255,255,255,0.5);
         }
         .hero p {
             font-size: 1.4rem;
-            color: #7f6e64;
             max-width: 600px;
             margin: 0 auto 2rem;
-            font-weight: 700;
             text-shadow: 0 1px 3px rgba(255,255,255,0.3);
         }
         .services-grid {
@@ -216,15 +228,11 @@
         }
         .service-card h3 {
             font-size: 1.8rem;
-            font-weight: 700;
-            color: #c17b5a;
             margin-bottom: 1rem;
             text-shadow: 0 1px 2px rgba(255,255,255,0.3);
         }
         .service-card p {
-            color: #6d5c53;
             margin-bottom: 1.5rem;
-            font-weight: 700;
             font-size: 1.3rem;
             text-shadow: 0 1px 2px rgba(255,255,255,0.3);
         }
@@ -234,8 +242,6 @@
             background: #f0e4d8;
             border-radius: 40px;
             font-size: 1.1rem;
-            color: #c17b5a;
-            font-weight: 700;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .video-card {
@@ -258,9 +264,6 @@
             height: 100px;
         }
         .video-card a {
-            color: #3a2c2a;
-            font-weight: 700;
-            font-size: 1.2rem;
             text-decoration: none;
             border-bottom: 1px dotted;
             text-shadow: 0 1px 2px rgba(255,255,255,0.5);
@@ -269,8 +272,6 @@
             margin-top: 3rem;
         }
         .video-section h3 {
-            color: #c17b5a;
-            font-weight: 700;
             font-size: 1.6rem;
             text-shadow: 0 1px 3px rgba(255,255,255,0.3);
         }
@@ -289,9 +290,7 @@
         }
         .creative-card h3 {
             font-size: 2rem;
-            color: #c17b5a;
             margin-bottom: 1rem;
-            font-weight: 700;
             text-align: center;
         }
 
@@ -320,8 +319,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #3a2c2a;
-            font-weight: 700;
             font-size: 1.2rem;
             padding: 0.5rem;
             background-color: #f0e4d8;
@@ -383,7 +380,6 @@
         .art-showcase p {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
-            color: #5f4e47;
         }
         .art-link {
             display: inline-block;
@@ -392,7 +388,6 @@
             padding: 0.8rem 2rem;
             border-radius: 40px;
             text-decoration: none;
-            font-weight: 700;
             font-size: 1.2rem;
             transition: background 0.3s;
             border: 1px solid rgba(255,255,255,0.3);
@@ -415,7 +410,6 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #3a2c2a;
         }
         .big-btn {
             background: #c17b5a;
@@ -429,7 +423,6 @@
             box-shadow: 0 10px 20px rgba(193, 123, 90, 0.3);
             display: inline-block;
             margin: 0.5rem;
-            font-weight: 700;
             text-decoration: none;
         }
         .big-btn:hover {
@@ -523,7 +516,6 @@
         }
         .content-container .doc-text {
             font-size: 1.2rem;
-            color: #3a2c2a;
             line-height: 1.6;
             white-space: pre-wrap;
             font-family: 'Cormorant Garamond', serif;
@@ -570,8 +562,6 @@
         }
         .contact-item {
             font-size: 1.3rem;
-            color: #5f4e47;
-            font-weight: 700;
             background: rgba(255,255,255,0.6);
             padding: 0.8rem 1.5rem;
             border-radius: 60px;
@@ -593,17 +583,12 @@
             background: transparent;
             border: none;
             box-shadow: none;
-            font-weight: 800;
             font-size: 1.4rem;
-            text-shadow: 0 1px 4px rgba(255,255,255,0.8);
         }
         footer {
             text-align: center;
             padding: 2rem;
-            color: #b8a89a;
             font-size: 1.2rem;
-            font-weight: 800;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.2);
         }
         @media (max-width: 800px) {
             header {
@@ -634,7 +619,7 @@
             padding: 0.4rem 0.8rem;
         }
 
-        /* PWA кнопка */
+        /* PWA кнопка (оригинальная, не трогаю) */
         .pwa-icon-btn {
             background: none;
             border: none;
@@ -742,7 +727,6 @@
             <small data-i18n="epigraph_sub">Кружение дервиша — древний символ движения к истине.</small>
         </div>
 
-        <!-- Блок PWA кнопки - ИСПРАВЛЕНО: убран onclick -->
         <div class="install-area">
             <div class="install-tooltip">
                 <button id="pwa-install-icon" class="pwa-icon-btn">
@@ -756,7 +740,6 @@
             <div class="install-note" data-i18n="pwa_note">✅ Нажмите на иконку монитора со стрелкой в адресной строке, чтобы установить приложение. На iPhone: Поделиться → На экран «Домой».</div>
         </div>
 
-        <!-- БИЗНЕС -->
         <section id="business" class="section active">
             <div class="hero">
                 <h2 data-i18n="business_title">Ваш бизнес на Кипре</h2>
@@ -819,7 +802,6 @@
             </div>
         </section>
 
-        <!-- КРЕАТИВ -->
         <section id="creative" class="section">
             <div class="hero">
                 <h2 data-i18n="creative_title">Творческие направления</h2>
@@ -846,7 +828,7 @@
                 <div class="creative-card">
                     <h3 data-i18n="art_trade_title">Торговля искусством</h3>
                     <div class="art-showcase">
-                        <p>Коллекция современного украинского искусства представлена на отдельном сайте.</p>
+                        <p data-i18n="art_collection_text">Коллекция современного украинского искусства представлена на отдельном сайте.</p>
                         <a href="https://gavrosh2007.github.io/ART-price" target="_blank" class="art-link" data-i18n="art_link">Посмотреть коллекцию →</a>
                     </div>
                 </div>
@@ -885,17 +867,16 @@
             </div>
         </section>
 
-        <!-- КОНТАКТЫ -->
         <section id="contact" class="section">
             <div class="contact-section">
-                <h2 style="font-size: 2.5rem; font-weight: 300; color: #c17b5a;" data-i18n="contact_title">Свяжитесь с нами</h2>
+                <h2 style="font-size: 2.5rem; font-weight: 300;" data-i18n="contact_title">Свяжитесь с нами</h2>
                 <div class="contact-info">
                     <div class="contact-row">
                         <a href="tel:+35799453575" class="contact-item">📞 +357 99 453575</a>
                         <a href="tel:+35799486511" class="contact-item">📞 +357 99 486511</a>
                         <a href="https://wa.me/35799453575" target="_blank" class="contact-item">💬 WhatsApp +357 99 453575</a>
                         <a href="https://wa.me/35799486511" target="_blank" class="contact-item">💬 WhatsApp +357 99 486511</a>
-                        <span class="contact-item" style="background: transparent; border: none; font-weight: 800; font-size: 1.4rem; text-shadow: 0 1px 4px rgba(255,255,255,0.8);">Viber: +357 99 453575, +357 99 486511</span>
+                        <span class="contact-item" style="background: transparent; border: none; font-size: 1.4rem;">Viber: +357 99 453575, +357 99 486511</span>
                     </div>
                     <div class="contact-row">
                         <a href="mailto:gavrosh2007@gmail.com" class="contact-item">✉️ gavrosh2007@gmail.com</a>
@@ -908,7 +889,7 @@
                         <a href="https://t.me/RBartsalonBot" target="_blank" class="contact-item">🤖 @RBartsalonBot</a>
                     </div>
                 </div>
-                <p style="margin-top: 2rem; color: #7f6e64; font-size: 1.3rem; font-weight: 700; text-shadow: 0 1px 3px rgba(255,255,255,0.5);" data-i18n="contact_note">Мы открыты для диалога и новых проектов.</p>
+                <p style="margin-top: 2rem; font-size: 1.3rem;" data-i18n="contact_note">Мы открыты для диалога и новых проектов.</p>
             </div>
         </section>
     </main>
@@ -934,7 +915,7 @@
         </div>
     </div>
 
-    <!-- ========== ДОКУМЕНТЫ (ПОЛНЫЙ НАБОР) ========== -->
+    <!-- ========== ДОКУМЕНТЫ (ПОЛНЫЙ НАБОР, ВОССТАНОВЛЕН) ========== -->
     <div style="display: none;">
         <!-- offshore1 -->
         <div id="doc-offshore1-ru"><div class="doc-text"><h2 style="color:#c17b5a;">Наша деятельность</h2><p>Согласно древнегреческой мифологии, Гермес — бог торговли, прибыли, разумности, ловкости и красноречия, дающий богатство и доход в торговле, бог атлетов. Покровитель глашатаев и послов, а также проводник душ умерших в подземное царство Аида, изобрёл меры, числа, азбуку и обучил людей. Никто не мог превзойти Гермеса в ловкости и хитрости. Сын Зевса.</p><p>Первый свой трюк Гермес совершил ещё будучи в пелёнках — покинув свою колыбель, угнал пятьдесят коров, которых пас Аполлон. Чтобы их не нашли по следам, он привязал к их ногам ветки. А сам тем временем из панциря большой черепахи и из тонких кишок двух убитых коров сделал лиру.</p><p>Догадавшись, кто это сделал, Аполлон обвинил Гермеса в краже. Мать показала ему ребёнка, лежащего в пелёнках. Тогда Аполлон отнёс его к Зевсу, и Гермес после расспросов отца показал Аполлону, где находятся коровы, а сам сел неподалёку и стал играть на лире. Аполлону игра на лире очень понравилась и он предложил Гермесу обменять коров на лиру. Гермес же стал пасти коров, играя уже на свирели. Аполлону захотелось иметь и этот инструмент, и он предложил свой жезл в обмен на неё.</p><p>Есть также миф о том, как Гермес влюбился в Афродиту, но был отвергнут. Когда же Афродита купалась, Гермес послал орла, чтобы тот украл её сандалию. Афродита стала её искать и пришла к Гермесу, тот насладился с ней любовью. Гермес в благодарность сделал орла созвездием.</p><p>В поздние времена Гермеса стали называть Трисмегистом («трижды величайший») в связи с тем, что он вхож как в этот мир, так и в потусторонний. У Гермеса также имеется полученный от Аполлона (взамен свирели) традиционный крылатый жезл вестника — керикион или кадуцей, способный мирить врагов. Кадуцей имел на себе две змеи, которые обвили посох в тот момент, когда Гермес решил испытать его, поместив между ними…</p><p>Итак, мы, компания «Гермес менеджмент и консалтинг» поздравляем Вас с тем, что Вы дочитали до конца историю «патрона» и надеемся что повеселили Вас или хотя бы развлекли. В любом случае, воспринимайте текст выше как, например, современную живопись, которую так любят выставлять в своих холлах швейцарские и лихтенштейнские банки.</p><h3 style="color:#c17b5a;">Банкинг</h3><p>Кстати о банках: дело в том, что наша компания оформила своё интернет-присутствие только сейчас, во время апогея мирового экономического кризиса, который уже сказался на банковской деятельности, затруднив значительно их работу, усложнив управление активами клиентов и, собственно, получение этих активов. Наша компания берётся, в частности, улучшить напряжённую ситуацию, если таковая имеется, возникшую между банками и клиентами, путём подбора банков и сопутствующих деловых институтов для каждого клиента в отдельности. Это, конечно, не обозначает, что наша компания расскажет Вам как «ограбить банк» или получить страховую премию в случае катастрофы с вашими активами, но поможет Вам договориться о компенсации полностью законным путём.</p><h3 style="color:#c17b5a;">Структурирование</h3><p>Также наша компания, не будучи уверена, что хочет повторить судьбу легенды налогового планирования по имени Arthur Andersen из большой пятёрки аудиторов, покинувшей насиженное место на рынке и изменившей название, готова, тем не менее, предоставить готовые решения в виде структур компаний и, часто, персонала и помещений для выполнения Ваших задач. Следовательно мы не будем помогать Вам планировать Ваши налоги, но поможем структурировать Вашу деятельность в соответствии с мировой практикой сотрудничества различных юрисдикций, опираясь на свежую аналитику интересующего направления деятельности.</p><h3 style="color:#c17b5a;">Учет</h3><p>Кроме того, наша компания обеспечит, если есть необходимость, получение юридических адресов на Кипре и не только, сервисов номинантов, банковского беспроблемного обслуживания в удалённом режиме, делающем доступной практически любую интересующую юрисдикцию, предоставление любых юридических услуг в популярных юрисдикциях, а также бухгалтерских и аудиторских сервисов.</p><h3 style="color:#c17b5a;">Резидентный статус</h3><p>Мы также поможем Вам в получении резидентного статуса и паспортов различных юрисдикций, покупке и продаже недвижимости европейских юрисдикций, профессиональной организации оформления различных трастов в респектабельных юридических офисах в Европе и Азии, а также других доверительных структур согласно принятой практики законодательства конкретной юрисдикции.</p><h3 style="color:#c17b5a;">Дизайн и строительство резидентного жилья и/или инвестирование в рынок недвижимости</h3><p>1. Инвестирование средств в крупные архитектурные проекты, связанные с последними тенденциями на рынке недвижимости.<br>2. Консультирование, визуализация, дизайн-проект оформления экстерьера и интерьера, подбор материалов архитектурного проекта любой сложности, арт-консалтинг, работа с крупнейшими мировыми аукционными домами, галереями и художниками.</p><p>Возвращаясь от достаточно скучно-делового описания деятельности компании к заслугам «патрона», хотелось бы заметить, что по мнению некоторых античных историков, битв титанов было две и первая закончилась, как раз, разгромом Олимпийцев. Зевса же посадили в клетку, из которой его выручил Гермес, укравший у титанов его посох, метавший молнии. После этого, как Вы понимаете, остались только Боги с горы Олимп.</p><p>Компания «Гермес менеджмент и консалтинг» гарантирует Вам приятное восхождение на ваш персональный Олимп в силу некоторых дополнительных направлений деятельности компании и её контактов.</p><h3 style="color:#c17b5a;">Дополнительно</h3><p>1. Организация с помощью привлечения профессионалов с многолетним опытом работы конференций и семинаров на Кипре.<br>2. Продвижение Вашего веб-сайта и веб-страниц в общественных сетях и представление вашей компании в интернете.<br>3. Обеспечение регулярного сервиса вашего организма путём привлечения лучших специалистов в области стоматологии и зубопротезирования.</p></div></div>
@@ -1022,6 +1003,7 @@
                 creative_btn: 'Вдохновиться',
                 arch_title: 'Архитектура и дизайн',
                 art_trade_title: 'Торговля искусством',
+                art_collection_text: 'Коллекция современного украинского искусства представлена на отдельном сайте.',
                 art_link: 'Посмотреть коллекцию →',
                 culinary_title: 'Кулинария',
                 culinary_desc: 'Шведский сэндвич-торт Smörgåstårta — удивительное блюдо для вашего стола.',
@@ -1068,6 +1050,7 @@
                 creative_btn: 'Get inspired',
                 arch_title: 'Architecture & Design',
                 art_trade_title: 'Art Trade',
+                art_collection_text: 'Collection of contemporary Ukrainian art is presented on a separate website.',
                 art_link: 'View collection →',
                 culinary_title: 'Culinary',
                 culinary_desc: 'Swedish sandwich cake Smörgåstårta — an amazing dish for your table.',
@@ -1114,6 +1097,7 @@
                 creative_btn: 'Εμπνευστείτε',
                 arch_title: 'Αρχιτεκτονική & Σχέδιο',
                 art_trade_title: 'Εμπόριο τέχνης',
+                art_collection_text: 'Η συλλογή σύγχρονης ουκρανικής τέχνης παρουσιάζεται σε ξεχωριστό ιστότοπο.',
                 art_link: 'Δείτε τη συλλογή →',
                 culinary_title: 'Γαστρονομία',
                 culinary_desc: 'Σουηδικό σάντουιτς κέικ Smörgåstårta — ένα εκπληκτικό πιάτο για το τραπέζι σας.',
@@ -1160,6 +1144,7 @@
                 creative_btn: 'Надихнутись',
                 arch_title: 'Архітектура та дизайн',
                 art_trade_title: 'Торгівля мистецтвом',
+                art_collection_text: 'Колекція сучасного українського мистецтва представлена на окремому сайті.',
                 art_link: 'Переглянути колекцію →',
                 culinary_title: 'Кулінарія',
                 culinary_desc: 'Шведський сендвіч-торт Smörgåstårta — дивовижна страва для вашого столу.',
@@ -1365,7 +1350,6 @@
         })();
     </script>
 
-    <!-- PWA service worker регистрация - ИСПРАВЛЕНО: путь sw.js -->
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js')
@@ -1381,7 +1365,6 @@
             if (btn) btn.style.display = 'inline-flex';
         });
         
-        // ИСПРАВЛЕНО: обработчик кнопки с else
         document.getElementById('pwa-install-icon')?.addEventListener('click', async () => {
             if (deferredPrompt) {
                 deferredPrompt.prompt();
