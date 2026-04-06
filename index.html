@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800&display=swap&subset=greek" rel="stylesheet">
     
-    <!-- PWA -->
+    <!-- PWA - ИСПРАВЛЕНО: путь к манифесту -->
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -742,7 +742,7 @@
             <small data-i18n="epigraph_sub">Кружение дервиша — древний символ движения к истине.</small>
         </div>
 
-        <!-- Блок PWA кнопки (инструкция с поддержкой языков) -->
+        <!-- Блок PWA кнопки - ИСПРАВЛЕНО: убран onclick -->
         <div class="install-area">
             <div class="install-tooltip">
                 <button id="pwa-install-icon" class="pwa-icon-btn">
@@ -988,7 +988,6 @@
         function toggleTax(e) { document.getElementById('taxStack').classList.toggle('expanded'); }
         function toggleBank(e) { document.getElementById('bankStack').classList.toggle('expanded'); }
 
-        // Функция показа инструкции по установке (с учётом языка)
         window.showPWAInstructions = function() {
             const lang = document.querySelector('.lang-btn.active')?.dataset.lang || 'ru';
             let msg = '';
@@ -999,7 +998,6 @@
             alert(msg);
         };
 
-        // Переводы (все ключи, включая PWA)
         const translations = {
             ru: {
                 nav_business: 'Бизнес',
@@ -1187,7 +1185,6 @@
             }
         };
 
-        // Инициализация переводов и всех остальных функций
         (function init() {
             let currentLang = 'ru';
             let isPlaying = false;
@@ -1216,7 +1213,6 @@
             });
             setLanguage('ru');
 
-            // Переключение разделов с видео
             const sections = document.querySelectorAll('.section');
             sections.forEach(s => s.classList.remove('active'));
             document.getElementById('business').classList.add('active');
@@ -1290,7 +1286,6 @@
                 });
             });
 
-            // Открытие стеков бизнеса
             document.getElementById('card-offshore').addEventListener('click', function(e) {
                 e.stopPropagation();
                 document.querySelectorAll('.stack-container').forEach(c => c.classList.remove('active'));
@@ -1310,7 +1305,6 @@
                 document.getElementById('bankStack').classList.remove('expanded');
             });
 
-            // Аудио-вдохновение
             const inspireBtn = document.getElementById('inspireButton');
             const inspireAudio = document.getElementById('inspireAudio');
             inspireBtn.addEventListener('click', function(e) {
@@ -1325,7 +1319,6 @@
                 isPlaying = !isPlaying;
             });
 
-            // Оверлей контента
             const contentOverlay = document.getElementById('contentOverlay');
             const contentDisplay = document.getElementById('contentDisplay');
             const closeBtn = document.getElementById('closeContent');
@@ -1372,11 +1365,11 @@
         })();
     </script>
 
-    <!-- PWA service worker регистрация -->
+    <!-- PWA service worker регистрация - ИСПРАВЛЕНО: путь sw.js -->
     <script>
         if ('serviceWorker' in navigator) {
-           navigator.serviceWorker.register('sw.js?v=2')
-               .then(() => console.log('SW registered'))
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log('SW registered'))
                 .catch(err => console.log('SW error:', err));
         }
         
@@ -1388,6 +1381,7 @@
             if (btn) btn.style.display = 'inline-flex';
         });
         
+        // ИСПРАВЛЕНО: обработчик кнопки с else
         document.getElementById('pwa-install-icon')?.addEventListener('click', async () => {
             if (deferredPrompt) {
                 deferredPrompt.prompt();
