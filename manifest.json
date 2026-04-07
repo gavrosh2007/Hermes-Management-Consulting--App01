@@ -1,20 +1,26 @@
 {
-  "name": "Hermes MC",
-  "short_name": "Hermes",
+  "name": "Hermes Management & Consulting",
+  "short_name": "Hermes MC",
+  "description": "Бизнес-консалтинг, регистрация компаний на Кипре, налоговое планирование, творческие проекты",
   "start_url": "/Hermes-Management-and-Consulting-App/",
   "display": "standalone",
   "theme_color": "#c17b5a",
   "background_color": "#ffffff",
+  "orientation": "portrait",
+  "scope": "/Hermes-Management-and-Consulting-App/",
+  "lang": "ru",
   "icons": [
     {
-      "src": "icon192.png",
+      "src": "icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "icon512.png",
+      "src": "icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
