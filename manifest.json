@@ -2,66 +2,66 @@
   "name": "Hermes Management & Consulting",
   "short_name": "Hermes MC",
   "description": "Бизнес-консалтинг, регистрация компаний на Кипре, налоговое планирование, творческие проекты",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#c17b5a",
   "background_color": "#ffffff",
   "orientation": "portrait",
-  "scope": "/",
+  "scope": ".",
   "categories": ["business", "finance", "lifestyle"],
   "lang": "ru",
   "dir": "ltr",
   "icons": [
     {
-      "src": "icons/icon-72.png",
+      "src": "icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-96.png",
+      "src": "icon-96x96.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-128.png",
+      "src": "icon-128x128.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-144.png",
+      "src": "icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-152.png",
+      "src": "icon-152x152.png",
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-192.png",
+      "src": "icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-384.png",
+      "src": "icon-384x384.png",
       "sizes": "384x384",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-400.png",
+      "src": "icon-400x400.png",
       "sizes": "400x400",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
