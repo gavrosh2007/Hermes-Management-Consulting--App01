@@ -4,6 +4,7 @@
   "start_url": "/Hermes-Management-and-Consulting-App/index.html",
   "scope": "/Hermes-Management-and-Consulting-App/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "theme_color": "#c17b5a",
   "background_color": "#ffffff",
   "icons": [
@@ -11,13 +12,13 @@
       "src": "/Hermes-Management-and-Consulting-App/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/Hermes-Management-and-Consulting-App/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
