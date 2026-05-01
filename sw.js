@@ -4,15 +4,14 @@ const base = (() => {
   return path.join('/') + '/';
 })();
 
-const CACHE_NAME = 'hermes-v2';
+const CACHE_NAME = 'hermes-v5';
 const urlsToCache = [
   base,
   base + 'index.html',
   base + 'offline.html',
   base + 'manifest.json',
   base + 'icon-192x192.png',
-  base + 'icon-512x512.png',
-  'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800&display=swap'
+  base + 'icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -24,13 +23,21 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) return response;
-        return fetch(event.request);
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        return caches.match(event.request).then(response => {
+          return response || caches.match(base + 'offline.html');
+        });
       })
-  );
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then(response => {
+        return response || fetch(event.request);
+      })
+    );
+  }
 });
 
 self.addEventListener('activate', event => {
