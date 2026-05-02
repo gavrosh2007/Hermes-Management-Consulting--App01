@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800&display=swap&subset=greek" rel="stylesheet">
     
     <!-- PWA -->
-    <link rel="manifest" href="/Hermes-Management-and-Consulting-App/manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="HM&amp;C">
@@ -1315,7 +1315,7 @@
                 else if (type === 'text') {
                     const docElement = document.getElementById(data);
                     if (docElement) contentDisplay.innerHTML = docElement.innerHTML;
-                    else contentDisplay.innerHTML = '<p>Документ не найден.</p>';
+                    else contentDisplay.innerHTML = '<p>К сожалению, документ не найден.</p>';
                 }
                 contentOverlay.classList.add('active');
             }
@@ -1354,7 +1354,7 @@
 
         // ==== ИСПРАВЛЕННАЯ РЕГИСТРАЦИЯ SERVICE WORKER ====
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js', { scope: './' })
+            navigator.serviceWorker.register('./sw.js')
                 .then(reg => console.log('SW registered with scope:', reg.scope))
                 .catch(err => console.error('SW registration failed:', err));
         }

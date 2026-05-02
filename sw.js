@@ -1,10 +1,10 @@
 const CACHE_NAME = 'hermes-v1';
 const urlsToCache = [
-  '/Hermes-Management-and-Consulting-App/',
-  '/Hermes-Management-and-Consulting-App/index.html',
-  '/Hermes-Management-and-Consulting-App/manifest.json',
-  '/Hermes-Management-and-Consulting-App/icon-192x192.png',
-  '/Hermes-Management-and-Consulting-App/icon-512x512.png',
+  './',
+  './index.html',
+  './manifest.json',
+  './icon-192x192.png',
+  './icon-512x512.png',
   'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800&display=swap'
 ];
 
