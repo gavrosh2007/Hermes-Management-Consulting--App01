@@ -1363,8 +1363,6 @@
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            const btn = document.getElementById('pwa-install-icon');
-            if (btn) btn.style.display = 'inline-flex';
         });
         
         document.getElementById('pwa-install-icon')?.addEventListener('click', async () => {
